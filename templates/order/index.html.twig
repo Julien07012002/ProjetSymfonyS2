@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Orders</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.createdAt|date('Y-m-d H:i:s') }}</td>
+                    <td>{{ order.customer }}</td>
+                    <td>{{ order.total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('orders_new') }}" class="btn btn-primary">New Order</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Commande{% endblock %}
+
+{% block body %}
+    <h1>Nouvelle Commande</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.product) }}
+        {{ form_row(form.quantity) }}
+        {{ form_row(form.customerName) }}
+        {{ form_row(form.customerEmail) }}
+        {{ form_row(form.shippingAddress) }}
+
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('order_index') }}">Retour aux produits</a>
+{% endblock %}

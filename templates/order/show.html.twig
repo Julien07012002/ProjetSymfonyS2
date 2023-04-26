@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande n°{{ order.id }}{% endblock %}
+
+{% block body %}
+    <h1>Commande n°{{ order.id }}</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Date de la commande</th>
+                <td>{{ order.createdAt|date('d/m/Y H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td>{{ order.total }} €</td>
+            </tr>
+            <tr>
+                <th>Produits</th>
+                <td>
+                    <ul>
+                        {% for item in order.items %}
+                            <li>{{ item.product.name }} ({{ item.quantity }} x {{ item.product.price }} €)</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

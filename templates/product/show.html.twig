@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h1>{{ product.name }}</h1>
+  <dl>
+    <dt>Description</dt>
+    <dd>{{ product.description }}</dd>
+    <dt>Prix</dt>
+    <dd>{{ product.price }}</dd>
+    <dt>Categorie</dt>
+    <dd>{{ product.category.name }}</dd>
+  </dl>
+  <a href="{{ path('product_index') }}">Retour aux produits</a>
+{% endblock %}

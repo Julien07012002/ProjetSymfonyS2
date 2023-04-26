@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Produit ajouté au panier</h1>
+    <p>{{ product.name }} a été ajouté au panier.</p>
+    <a href="{{ path('cart_index') }}">Voir le panier</a>
+{% endblock %}

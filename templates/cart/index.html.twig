@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Cart</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cartItem in cartItems %}
+                <tr>
+                    <td>{{ cartItem.product.name }}</td>
+                    <td>{{ cartItem.quantity }}</td>
+                    <td>{{ cartItem.product.price }}</td>
+                    <td>{{ cartItem.total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cart_checkout') }}">Checkout</a>
+{% endblock %}
