@@ -6,3 +6,6 @@ controllers:
 home:
     path: /
     controller: App\Controller\HomeController::index
+app_register:
+    path: /app_register
+    controller: App\Controller\RegistrationController::register

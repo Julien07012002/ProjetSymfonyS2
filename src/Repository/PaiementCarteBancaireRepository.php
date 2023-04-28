@@ -6,7 +6,7 @@ use App\Entity\Order;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-class OrderRepository extends ServiceEntityRepository
+class PaiementCarteBancaireRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

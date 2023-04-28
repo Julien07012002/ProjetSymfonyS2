@@ -13,14 +13,11 @@ class CartController extends AbstractController
     /**
      * @Route("/cart", name="cart_index")
      */
-    public function index(CartService $cartService): Response
-    {
-        $cartItems = $cartService->getCartItems();
-
-        return $this->render('cart/index.html.twig', [
-            'cartItems' => $cartItems,
-        ]);
-    }
+    public function index(CartService $cartService)
+{
+    $cartItems = $cartService->getCartItems();
+    return $this->render('cart/index.html.twig', ['cartItems' => $cartItems]);
+}
 
     /**
      * @Route("/cart/add/{id}", name="cart_add")

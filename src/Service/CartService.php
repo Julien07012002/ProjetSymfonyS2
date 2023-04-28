@@ -37,10 +37,10 @@ class CartService
     }
 
     public function getCartItems()
-    {
-        // Récupérer tous les éléments du panier
-        return $this->entityManager->getRepository(CartItem::class)->findAll();
-    }
+{
+    // Récupérer tous les éléments du panier
+    return $this->entityManager->getRepository(CartItem::class)->findAll();
+}
 
     public function add(Product $product, int $quantity = 1): void
     {
